@@ -1,8 +1,9 @@
 USE spookywitchcraft;  
 GO  
-CREATE PROCEDURE GetTriviaQuestions   
-
+CREATE PROCEDURE GetTriviaQuestionById   
+    @Id int
 AS   
     SET NOCOUNT ON;  
-    select * from [TriviaQuestions]
+    select top 1 * from [TriviaQuestions]
+    where [TriviaQuestionId] = @Id
 GO  
